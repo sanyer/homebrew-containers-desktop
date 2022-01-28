@@ -6,8 +6,7 @@ Homebrew tap for alternative casks for Rancher Desktop and Docker Desktop.
 
 If you are curious why this exist, check out these discussions:
 
-[https://github.com/Homebrew/homebrew-cask/pull/117823](https://github.com/Homebrew/homebrew-cask/pull/117823)
-[https://github.com/Homebrew/homebrew-cask/pull/111861](https://github.com/Homebrew/homebrew-cask/pull/111861)
+Homebrew/homebrew-cask#117823 and Homebrew/homebrew-cask#111861
 
 Main difference for rancher-desktop cask:
 

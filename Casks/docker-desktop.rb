@@ -33,31 +33,40 @@ cask "docker-desktop" do
   ]
 
   app "Docker.app"
-  binary "#{appdir}/Docker.app/Contents/Resources/etc/docker.bash-completion",
+  binary "#{appdir}/Docker.app/Contents/Resources/etc/docker",
          target: "#{HOMEBREW_PREFIX}/etc/bash_completion.d/docker"
   binary "#{appdir}/Docker.app/Contents/Resources/etc/docker-compose.bash-completion",
          target: "#{HOMEBREW_PREFIX}/etc/bash_completion.d/docker-compose"
-  binary "#{appdir}/Docker.app/Contents/Resources/etc/docker.zsh-completion",
+  binary "#{appdir}/Docker.app/Contents/Resources/etc/_docker",
          target: "#{HOMEBREW_PREFIX}/share/zsh/site-functions/_docker"
   binary "#{appdir}/Docker.app/Contents/Resources/etc/docker-compose.zsh-completion",
          target: "#{HOMEBREW_PREFIX}/share/zsh/site-functions/_docker_compose"
-  binary "#{appdir}/Docker.app/Contents/Resources/etc/docker.fish-completion",
+  binary "#{appdir}/Docker.app/Contents/Resources/etc/docker.fish",
          target: "#{HOMEBREW_PREFIX}/share/fish/vendor_completions.d/docker.fish"
   binary "#{appdir}/Docker.app/Contents/Resources/etc/docker-compose.fish-completion",
          target: "#{HOMEBREW_PREFIX}/share/fish/vendor_completions.d/docker-compose.fish"
 
   uninstall delete:    [
     "/Library/PrivilegedHelperTools/com.docker.vmnetd",
+    "/usr/local/bin/com.docker.cli",
+    "/usr/local/bin/docker-compose-v1",
     "/usr/local/bin/docker-compose",
     "/usr/local/bin/docker-credential-desktop",
     "/usr/local/bin/docker-credential-ecr-login",
     "/usr/local/bin/docker-credential-osxkeychain",
     "/usr/local/bin/docker",
+    "/usr/local/bin/hub-tool",
     "/usr/local/bin/hyperkit",
     "/usr/local/bin/kubectl.docker",
     "/usr/local/bin/kubectl",
     "/usr/local/bin/notary",
     "/usr/local/bin/vpnkit",
+    "#{HOMEBREW_PREFIX}/share/zsh/site-functions/_docker",
+    "#{HOMEBREW_PREFIX}/share/zsh/site-functions/_docker_compose",
+    "#{HOMEBREW_PREFIX}/share/fish/vendor_completions.d/docker.fish",
+    "#{HOMEBREW_PREFIX}/share/fish/vendor_completions.d/docker-compose.fish",
+    "#{HOMEBREW_PREFIX}/etc/bash_completion.d/docker",
+    "#{HOMEBREW_PREFIX}/etc/bash_completion.d/docker-compose",
   ],
             launchctl: [
               "com.docker.helper",
